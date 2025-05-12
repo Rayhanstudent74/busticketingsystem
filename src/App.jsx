@@ -1,6 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
+import HomeContainer from './components/Home/HomeContainer';
+import Bus from './components/Pages/Bus';
+import Detail from './components/Pages/Detail';
+import Checkout from './components/Checkout';
+import Finalcheckout from './components/Finalcheckout';
+import Login from './components/Login';
+import Registration from './components/Registration';
 
 function App() {
 
@@ -11,9 +19,18 @@ function App() {
           {/* Navbar */}
           <Navbar />
 
-          {/* Home Content */}
+          <Routes>
+            <Route path="/" element={<HomeContainer/>} />
+            <Route path="/bus" element={<Bus/>} />
+            <Route path="/bus/bus/bus-details" element={<Detail/>} />
+            <Route path="/bus/bus/bus-details/Checkout" element={<Checkout/>} />
+            <Route path="/bus/bus/bus-details/Checkout/Finalcheckout" element={<Finalcheckout/>} />
+            <Route path="/login" element={<Login></Login>} />
+            <Route path="/registration" element={<Registration></Registration>} />
+          </Routes>
 
           {/* Footer */}
+          <Footer/>
         </div>
       </Router>
     </>
